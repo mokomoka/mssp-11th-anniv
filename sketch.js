@@ -6,9 +6,12 @@ var obakex = 0.0;
 var obakey = 0.0;
 var canvas;
 
+var positionx = new Array(16);
+var positiony = new Array(16);
+var r = new Array(16);
+
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
-  // canvas.style('display', 'block');
   canvas.position(0,0);
   canvas.style('z-index', -1);
   frameRate(30);
@@ -16,10 +19,18 @@ function setup() {
   kikkun = new Obake(2);
   aroma = new Obake(3);
   eoheoh = new Obake(4);
+
+  for(let i=0; i<16; i++){
+    positionx[i] = random(width);
+    positiony[i] = random(height);
+    r[i] = random(16, 80);
+  }
 }
 
 function draw() {
   background(255);
+
+  drawCircles();
   
   eoheoh.draw(obakex, obakey);
   kikkun.draw(obakex+120, obakey);
@@ -39,7 +50,22 @@ function mouseClicked(){
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight)
+  resizeCanvas(windowWidth, windowHeight);
+  for(let i=0; i<16; i++){
+    positionx[i] = random(width);
+    positiony[i] = random(height);
+    r[i] = random(16, 80);
+  }
+}
+
+function drawCircles() {
+  noStroke();
+  var colors = [color(69, 133, 230, 128), color(245, 242, 61, 128), color(237, 38, 39, 128), color(69, 209, 74, 128)];
+
+  for(let i=0; i<16; i++){
+    fill(colors[i%4]);
+    ellipse(positionx[i], positiony[i], r[i], r[i]);
+  }
 }
 
 class Obake {
