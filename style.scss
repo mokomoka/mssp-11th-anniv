@@ -5,6 +5,8 @@ h1, h2 {
 
 html {
   height: 100%;
+  font-family: 'Noto Sans', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', メイリオ, Meiryo, sans-serif;
+  color: #2d2d2d;
 }
 
 body {
@@ -15,9 +17,22 @@ body {
   align-items: center;
 }
 
+h1 {
+  font-size: 2.4em;
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: normal;
+}
+
 div {
   text-align: center;
   padding: 16px;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(8px);
+  border-top:8px dotted rgba(69, 133, 230, 0.8);
+  border-right:8px dotted rgba(245, 242, 61, 0.8);
+  border-bottom:8px dotted rgba(237, 38, 39, 0.8);
+  border-left:8px dotted rgba(69, 209, 74, 0.8);
 }

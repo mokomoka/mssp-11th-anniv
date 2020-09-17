@@ -56,7 +56,7 @@ class Obake {
     scale(0.2);
     if (this.t==2) drawPartsK1();
     strokeWeight(40);
-    stroke(0);
+    stroke(45);
     if (this.t==3) drawPartsA1();
     fill(255);
     rect(-130, 730, -40, 900, 50);
@@ -104,7 +104,7 @@ function drawPartsK2() {
   bezierVertex(-180, 100, -240, 220, -270, 356);
   endShape();
 
-  stroke(0);
+  stroke(45);
   noFill();
   beginShape();
   vertex(-155, 325);
@@ -168,7 +168,7 @@ function drawPartsA1() {
 
 function drawPartsA2() {
   noStroke();
-  fill(0);
+  fill(45);
   beginShape();
   vertex(68, 108);
   bezierVertex(100, 200, 160, 270, 256, 300);
